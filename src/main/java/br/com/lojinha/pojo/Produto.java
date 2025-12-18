@@ -1,17 +1,16 @@
 package br.com.lojinha.pojo;
 
+import br.com.lojinha.enums.Tamanho;
+import java.util.List;
+
 public class Produto {
 
     private String nome;
     private String marca;
     private double valor;
-    private String tamanho;
-    private String itemIncluso;
+    private Tamanho tamanho;
+    private List<String> itemIncluso;
 
-    /* Getters e Setters são métodos usados para acessar e modificar os atributos privados de uma classe.
-       Eles fornecem uma maneira controlada de ler e atualizar os valores dos atributos,
-       garantindo encapsulamento e segurança dos dados.
-    */
     public String getNome() {
         return nome;
     }
@@ -33,22 +32,26 @@ public class Produto {
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        if (valor > 0){
+            this.valor = valor;
+        } else {
+            throw new IllegalArgumentException("Valores devem ser maior que 0"); // Argomento inválido "IllegalArgumentException"
+        }
     }
 
-    public String getTamanho() {
-        return tamanho;
+    public Tamanho getTamanho() {
+        return this.tamanho;
     }
 
-    public void setTamanho(String tamanho) {
+    public void setTamanho(Tamanho tamanho) {
         this.tamanho = tamanho;
     }
 
-    public String getItemIncluso() {
+    public List<String> getItemIncluso() {
         return itemIncluso;
     }
 
-    public void setItemIncluso(String itemIncluso) {
+    public void setItemIncluso(List<String> itemIncluso) {
         this.itemIncluso = itemIncluso;
     }
 
