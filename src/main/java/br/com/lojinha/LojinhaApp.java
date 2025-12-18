@@ -9,7 +9,8 @@ public class LojinhaApp {
 
     public static void main(String[] args) {
 
-        Produto meuProduto = new Produto();
+        Produto meuProduto = new Produto("BIC", Tamanho.PEQUENO);
+
         meuProduto.setNome("Caneta");
         meuProduto.setValor(30);
         meuProduto.setTamanho(Tamanho.PEQUENO);

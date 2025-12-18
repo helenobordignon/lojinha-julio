@@ -11,6 +11,16 @@ public class Produto {
     private Tamanho tamanho;
     private List<String> itemIncluso;
 
+    /* construtores */
+
+    public Produto( String marcaInicial, Tamanho tamanhoInicial) {
+        // definir valores padrão a serem usados na criação do objeto
+        this.marca = marcaInicial;
+        this.tamanho = tamanhoInicial;
+    }
+
+    /* getters e setters */
+
     public String getNome() {
         return nome;
     }
